@@ -32,7 +32,7 @@ const Feeling = () => {
       <Slider
         data-testid="input"
         aria-label="Always visible"
-        defaultValue={9}
+        defaultValue={1}
         valueLabelDisplay="auto"
         step={1}
         marks

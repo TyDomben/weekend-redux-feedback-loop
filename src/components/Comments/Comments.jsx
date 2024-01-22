@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 // Comments component
-function Comments() {
+const Comments = () => {
   const [comments, setComments] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
@@ -21,7 +21,13 @@ function Comments() {
   return (
     <div>
       <h2>any comments you want to leave?</h2>
-      <textarea
+      <TextField
+        data-testid="input"
+        label="Comments"
+        multiline
+        rows={4}
+        variant="outlined"
+        fullWidth
         value={comments}
         onChange={(event) => setComments(event.target.value)}
       />
