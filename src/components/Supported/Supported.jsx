@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Box, Slider } from "@mui/material";
 import { useDispatch } from "react-redux";
-// Supported component
+
+// Supported - Support component
 const Supported = () => {
   const [sliderValueSupported, setsliderValueSupported] = useState(1);
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Supported = () => {
       <h2>how well are you being supported?</h2>
       <Box sx={{ width: 500, margin: "auto" }}>
         <Slider
+          data-testid="input"
           aria-label="Always visible"
           defaultValue={9}
           valueLabelDisplay="auto"
@@ -32,7 +34,7 @@ const Supported = () => {
           value={sliderValueSupported}
           onChange={(event, newValue) => setsliderValueSupported(newValue)}
         />
-        <Button variant="contained" onClick={handleSubmit}>
+        <Button data-testid="next" variant="contained" onClick={handleSubmit}>
           Next
         </Button>
       </Box>

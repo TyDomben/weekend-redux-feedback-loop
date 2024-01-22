@@ -1,10 +1,12 @@
 // any comments you want to leave?
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { Button } from "@mui/material";
 
+// Comments component
 function Comments() {
-  const [comments, setComments] = useState('');
+  const [comments, setComments] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -13,17 +15,19 @@ function Comments() {
       type: "ADD_FEEDBACK",
       payload: { comments },
     });
-    history.push('/review'); 
+    history.push("/review");
   };
 
   return (
     <div>
       <h2>any comments you want to leave?</h2>
-      <textarea 
+      <textarea
         value={comments}
         onChange={(event) => setComments(event.target.value)}
       />
-      <button onClick={handleSubmit}>Next</button>
+      <Button data-testid="next" variant="contained" onClick={handleSubmit}>
+        Next
+      </Button>{" "}
     </div>
   );
 }

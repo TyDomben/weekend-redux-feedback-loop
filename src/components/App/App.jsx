@@ -30,6 +30,7 @@ const Feeling = () => {
     <Box sx={{ width: 500, margin: "auto" }}>
       <h1>how are you feeling today?</h1>
       <Slider
+        data-testid="input"
         aria-label="Always visible"
         defaultValue={9}
         valueLabelDisplay="auto"
@@ -40,7 +41,7 @@ const Feeling = () => {
         value={sliderValueFeeling}
         onChange={(event, newValue) => setsliderValueFeeling(newValue)}
       />
-      <Button variant="contained" onClick={handleSubmit}>
+      <Button data-testid="next" variant="contained" onClick={handleSubmit}>
         Next
       </Button>
     </Box>
@@ -51,8 +52,7 @@ const App = () => {
   const initialFetch = () => {
     axios
       .get("/api/feedback")
-      .then((res) => {
-      })
+      .then((res) => {})
       .catch((error) => {
         console.log(error);
       });
@@ -68,7 +68,8 @@ const App = () => {
         <header className="App-header">
           <h1 className="App-title">TY's feedback form</h1>
           <h4>
-            thank you so much for taking the time to try out my app, your feedback is appreciated
+            thank you so much for taking the time to try out my app, your
+            feedback is appreciated
           </h4>
         </header>
         <Switch>
