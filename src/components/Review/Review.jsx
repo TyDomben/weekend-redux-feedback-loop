@@ -30,17 +30,17 @@ const Review = () => {
       console.error("Error submitting feedback:", error);
     }
   };
-  history.push("../Success"); // Navigate to the next component
-
+  // history.push("../Success"); // Navigate to the next component
+console.log("feedback:", feedback);
   return (
     <div>
       <h2>review your feedback</h2>
-      <p>feeling: {feedback.feeling}</p>
-      <p>understanding: {feedback.understanding}</p>
-      <p>support: {feedback.support}</p>
-      <p>comments: {feedback.comments}</p>
+      <p>feeling: {feedback.feeling.feeling}</p>
+      <p>understanding: {feedback.understanding.Understanding}</p>
+      <p>support: {feedback.support.Supported}</p>
+      <p>comments: {feedback.comments.comments}</p>
       <Button data-testid="next" variant="contained" onClick={handleSubmit}>
-        restart
+        next
       </Button>{" "}
     </div>
   );

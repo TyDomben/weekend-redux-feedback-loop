@@ -12,10 +12,10 @@ router.post("/", (req, res) => {
 
   pool
     .query(sqlText, [
-      newFeedback.feeling,
-      newFeedback.understanding,
-      newFeedback.support,
-      newFeedback.comments,
+      newFeedback.feeling.feeling,
+      newFeedback.understanding.Understanding,
+      newFeedback.support.Supported,
+      newFeedback.comments.comments,
     ])
     .then(() => res.sendStatus(201))
     .catch((err) => {

@@ -12,10 +12,10 @@ const Comments = () => {
 
   const handleSubmit = () => {
     dispatch({
-      type: "ADD_FEEDBACK",
+      type: "SET_COMMENTS",
       payload: { comments },
     });
-    history.push("/review");
+    history.push("/review"); // go to next page
   };
 
   return (

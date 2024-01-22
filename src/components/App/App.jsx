@@ -10,6 +10,7 @@ import Supported from "../Supported/Supported.jsx";
 import Comments from "../Comments/Comments.jsx";
 import Review from "../Review/Review.jsx";
 import Success from "../Success/Success.jsx";
+import store from "../../store.js";
 
 // Feeling component
 const Feeling = () => {
@@ -19,11 +20,11 @@ const Feeling = () => {
 
   const handleSubmit = () => {
     dispatch({
-      type: "ADD_FEEDBACK",
+      type: "SET_FEELING",
       payload: { feeling: sliderValueFeeling },
     });
 
-    history.push("/understanding");
+    history.push("/understanding"); // go to next page
   };
 
   return (
@@ -39,7 +40,7 @@ const Feeling = () => {
         min={1}
         max={10}
         value={sliderValueFeeling}
-        onChange={(event, newValue) => setsliderValueFeeling(newValue)}
+        onChange={(event) => setsliderValueFeeling(event.target.value)}
       />
       <Button data-testid="next" variant="contained" onClick={handleSubmit}>
         Next

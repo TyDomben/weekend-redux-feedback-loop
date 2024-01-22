@@ -12,7 +12,7 @@ const Understanding = () => {
 
   const handleSubmit = () => {
     dispatch({
-      type: "ADD_FEEDBACK",
+      type: "SET_UNDERSTANDING",
       payload: { Understanding: sliderValueUnderstanding },
     });
     history.push("/supported");
@@ -32,8 +32,8 @@ const Understanding = () => {
           min={1}
           max={10}
           value={sliderValueUnderstanding}
-          onChange={(event, newValue) => setsliderValueUnderstanding(newValue)}
-        />
+          onChange={(event) => setsliderValueUnderstanding(event.target.value)}
+          />
         <Button data-testid="next" variant="contained" onClick={handleSubmit}>
           Next
         </Button>
