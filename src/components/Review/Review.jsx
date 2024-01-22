@@ -16,14 +16,14 @@ import axios from 'axios';
 
 
 const Review = () => {
-    const feedback = useSelector(state => state.feedback); // Replace 'state.feedback' with the correct path to your feedback state
+    const feedback = useSelector(state => state.feedback); 
     const dispatch = useDispatch();
     const history = useHistory();
 
     const handleSubmit = async () => {
         try {
-          await axios.post('/api/feedback', feedback); // Replace with your API endpoint
-          dispatch({ type: "CLEAR_FEEDBACK" }); // Clear feedback from Redux store (if necessary)
+          await axios.post('/api/feedback', feedback); 
+          dispatch({ type: "CLEAR_FEEDBACK" }); 
           history.push('/success'); // Navigate to the Success component
         } catch (error) {
           console.error('Error submitting feedback:', error);

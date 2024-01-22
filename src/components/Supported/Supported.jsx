@@ -12,7 +12,7 @@ const Supported = () => {
   const handleSubmit = () => {
     dispatch({
       type: "ADD_FEEDBACK",
-      payload: { feeling: sliderValueSupported },
+      payload: { Supported: sliderValueSupported },
     });
     history.push("/comments");
   };

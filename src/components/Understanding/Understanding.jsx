@@ -13,7 +13,7 @@ const Understanding = () => {
   const handleSubmit = () => {
       dispatch({
         type: "ADD_FEEDBACK",
-        payload: { feeling: sliderValueUnderstanding },
+        payload: { Understanding: sliderValueUnderstanding },
       });
       history.push('/supported');
   };
