@@ -1,16 +1,31 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import logger from "redux-logger";
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import logger from 'redux-logger';
 
-// const 
+// Reducer for managing feedback
+const feedback = (state = {}, action) => {
+    switch (action.type) {
+        case 'SET_FEELING':
+            return { ...state, feeling: action.payload };
+        case 'SET_UNDERSTANDING':
+            return { ...state, understanding: action.payload };
+        case 'SET_SUPPORT':
+            return { ...state, support: action.payload };
+        case 'SET_COMMENTS':
+            return { ...state, comments: action.payload };
+        default:
+            return state;
+    }
+};
 
-// const 
+// combine reducers
+const rootReducer = combineReducers({
+    feedback,
+});
 
-
-// const store = createStore(
-//     combineReducers({
-        
-//     }),
-//     applyMiddleware(logger)
-// );
+// Create the store
+const store = createStore(
+    rootReducer,
+    applyMiddleware(logger)
+);
 
 export default store;
